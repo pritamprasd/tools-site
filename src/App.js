@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Grommet } from 'grommet';
+
+const darkTheme = {
+  global: {
+    colors: {
+      background: '#1E1E1E',
+      text: '#FFFFFF',
+    },
+  },
+};
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Grommet theme={darkTheme} full>
         <h1>Hello</h1>
-      </div>
+        Sint reprehenderit in dolore reprehenderit aliqua nisi et pariatur.
+      </Grommet>
     );
   }
 }
