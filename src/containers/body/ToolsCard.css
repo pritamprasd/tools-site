@@ -1,0 +1,15 @@
+.toolsCard:hover{
+    color: var(--accent-color);
+}
+.toolCardTags{
+    font-weight: bolder;
+    font-size: smaller;
+}
+.toolCardTitle{
+    font-weight: bolder;
+    font-size: larger;
+}
+.toolCardDescription{
+    font-weight: lighter;
+    font-size: smaller;
+}

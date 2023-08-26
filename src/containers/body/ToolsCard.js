@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../App.css';
+import './ToolsCard.css';
 
 export default function ToolsCard({tileInfo}) {
   return (
