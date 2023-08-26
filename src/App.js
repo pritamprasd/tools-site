@@ -1,21 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Grommet } from 'grommet';
+import ToolsGrid from './containers/body/ToolsGrid';
+import ToolContainer from './containers/body/ToolContainer';
+import NavBar from './containers/NavBar/NavBar';
+import MainBody from './containers/body/MainBody';
+import MinimizableDiv from './containers/body/MinimizableDiv';
 
 const App = () => {
-  const darkTheme = {
-    global: {
-      colors: {
-        background: '#1E1E1E',
-        text: '#FFFFFF',
-      },
-    },
-  };
   return (
-    <Grommet theme={darkTheme} full>
-      <h1>Hello</h1>
-      Sint reprehenderit in dolore reprehenderit aliqua nisi et pariatur.
-    </Grommet>
+    <div className='app'>
+      <MinimizableDiv/>
+      <MainBody/>
+    </div>
   );
 }
 
