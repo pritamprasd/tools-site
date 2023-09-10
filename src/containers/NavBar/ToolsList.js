@@ -7,6 +7,10 @@ export default function ToolsList() {
   return (
     <div className='toolsList'>
         {appConfig.toolsList.map(t => <ToolLink t={t} key={t.id}/>)}
+        <ToolLink t={{
+            id: "site_settings",
+            title: "Settings"
+        }}/>
     </div>
   )
 }
