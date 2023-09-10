@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import ToolsGrid from './containers/body/ToolsGrid';
-import ToolContainer from './containers/body/ToolContainer';
-import NavBar from './containers/NavBar/NavBar';
-import MainBody from './containers/body/MainBody';
+import NavBar from './containers/NavBar';
+import MainBody from './containers/MainBody';
 
 const App = () => {
   return (

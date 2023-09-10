@@ -9,6 +9,14 @@
 }
 .mainBody{
     grid-area: body;
+    display: flex;   
+    flex-direction: column;
+}
+.searchTools{
+    padding: 2rem;
+}
+.searchInput{
+    width: 75vw;
 }
 .toolsGrid{
     display: flex;
@@ -52,6 +60,11 @@
     display: flex;
     gap: 0.5em;    
     flex-wrap: wrap;
+    align-content: flex-start;
+}
+.tag:hover{
+    opacity: 70%;
+    color: var(--accent-color);
 }
 .socialLinks{
     align-self: flex-end;

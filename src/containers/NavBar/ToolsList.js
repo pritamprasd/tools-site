@@ -13,7 +13,7 @@ export default function ToolsList() {
 
 function ToolLink({title}){
     const handleToolLinkClick = () => {
-        
+        console.log("heyyy")
     }
     return(
         <div className='toolLink' onClick={handleToolLinkClick}>{title}</div>

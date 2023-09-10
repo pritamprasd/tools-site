@@ -5,18 +5,17 @@ import { appConfig } from '../../appConfig';
 const getRandomColor = () => Math.floor(Math.random() * 256)
 
 export default function Tags() {
-    const [tools, setTools] = useState(appConfig.toolsList)
     const [tags, setTags] = useState([{}])
     //TODO: store in global store
     const [seletedTags, setSeletedTags] = useState([""])
     useEffect(() => {
-        setTags([...new Set(tools.flatMap(t => t.tags))].map(t => {
+        setTags([...new Set(appConfig.toolsList.flatMap(t => t.tags))].map(t => {
             return ({
                 name: t,
                 color: `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`
             })
         }))
-    }, [tools])
+    }, [])
     function addOrRemoveFromSelectedTags(tag){
         console.log(`tag: ${tag}`)
         if(seletedTags.includes(tag)){
@@ -27,7 +26,7 @@ export default function Tags() {
     }
     return (
         <div className='tags'>
-            {tags.map(t => <Tag name={t.name} color={t.color} toggleTag={addOrRemoveFromSelectedTags}/>)}
+            {tags.map(t => <Tag key={t.id} className="tag" name={t.name} color={t.color} toggleTag={addOrRemoveFromSelectedTags}/>)}
         </div>
     )
 }
