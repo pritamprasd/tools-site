@@ -1,15 +1,24 @@
 import React, { createContext, useContext, useState } from 'react';
 
-const activeToolIdContext = createContext();
-export const ActiveToolIdProvider = ({ children }) => {
-  const [toolId, setToolId] = useState("");
+const GlobalProviderContext = createContext();
+export const GlobalStateProvider = ({ children }) => {
+  const [globalVariables, setGlobalVariables] = useState({
+    activeToolId: "",
+    activeTags: []
+  });
+  const updateGlobalVariable = (variableName, newValue) => {
+    setGlobalVariables((prevGlobalVariables) => ({
+      ...prevGlobalVariables,
+      [variableName]: newValue,
+    }));
+  };
   return (
-    <activeToolIdContext.Provider value={{ toolId, setToolId }}>
+    <GlobalProviderContext.Provider value={{ globalVariables, updateGlobalVariable }}>
       {children}
-    </activeToolIdContext.Provider>
+    </GlobalProviderContext.Provider>
   );
 };
-export const useActiveToolId = () => useContext(activeToolIdContext);
+export const useGlobalContext = () => useContext(GlobalProviderContext);
 
 
   

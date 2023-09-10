@@ -74,6 +74,10 @@
     height: 2em;
     cursor: pointer;
 }
+.siteHeader{
+    font-size: 2.3em;
+    cursor: pointer;
+}
 @media (max-width: 767px) {
     .app {
         grid-template-areas: "navbar"

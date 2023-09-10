@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import '../../App.css'
 import { appConfig } from '../../appConfig';
+import { useGlobalContext } from '../../store/globalVars';
 
 const getRandomColor = () => Math.floor(Math.random() * 256)
 
 export default function Tags() {
+    const { globalVariables, updateGlobalVariable } = useGlobalContext();
     const [tags, setTags] = useState([{}])
-    //TODO: store in global store
-    const [seletedTags, setSeletedTags] = useState([""])
     useEffect(() => {
         setTags([...new Set(appConfig.toolsList.flatMap(t => t.tags))].map(t => {
             return ({
@@ -17,12 +17,12 @@ export default function Tags() {
         }))
     }, [])
     function addOrRemoveFromSelectedTags(tag){
-        console.log(`tag: ${tag}`)
-        if(seletedTags.includes(tag)){
-            setSeletedTags(seletedTags.filter(i => i !== tag))
+        if(globalVariables.activeTags.includes(tag)){
+            updateGlobalVariable("activeTags", globalVariables.activeTags.filter(i => i !== tag))
         } else{
-            setSeletedTags(seletedTags.concat(tag))
+            updateGlobalVariable("activeTags", globalVariables.activeTags.concat(tag))
         }
+        console.log(`tags: ${globalVariables.activeTags}`)
     }
     return (
         <div className='tags'>
@@ -32,10 +32,23 @@ export default function Tags() {
 }
 
 function Tag({name, color, toggleTag}) {
+    const[tagColor, setTagcolor] = useState(color)
+    const[tagBackGround, setTagBackground] = useState('white')
     function handleTagClick(){
         toggleTag(name)
+        if(tagColor == color){
+            setTagcolor("white")
+        } else {
+            setTagcolor(color)
+        }
+        if(tagBackGround == color){
+            setTagBackground("white")
+        } else {
+            setTagBackground(color)
+        }
     }
     return (<div className='tag' style={{
-        color: color
+        color: tagColor,
+        backgroundColor: tagBackGround
     }} onClick={handleTagClick}>#{name}</div>)
 }

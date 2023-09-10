@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../../App.css'
 import { appConfig } from '../../appConfig';
+import { useGlobalContext } from '../../store/globalVars';
 
 export default function ToolsList() {
-  const [tools, setTools] = useState(appConfig.toolsList)
   return (
     <div className='toolsList'>
-        {tools.map(t => <ToolLink title={t.title}/>)}
+        {appConfig.toolsList.map(t => <ToolLink t={t} key={t.id}/>)}
     </div>
   )
 }
 
-function ToolLink({title}){
+function ToolLink({t}){
+    const { _, updateGlobalVariable } = useGlobalContext();
     const handleToolLinkClick = () => {
-        console.log("heyyy")
+        updateGlobalVariable("activeToolId", t.id)
     }
     return(
-        <div className='toolLink' onClick={handleToolLinkClick}>{title}</div>
+        <div className='toolLink' onClick={handleToolLinkClick}>{t.title}</div>
     )
 }
