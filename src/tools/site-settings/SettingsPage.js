@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../../App.css';
 import './SettingsPage.css';
-import { tabs } from '../../config/tabs';
+import { tabs } from '../../appConfig';
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);

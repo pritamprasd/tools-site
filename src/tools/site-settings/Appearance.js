@@ -19,13 +19,7 @@ function AccentColor() {
     return (
         <div className='accentColor'>
             <div>Site accent Color</div>
-            <input
-                type="color"
-                id="colorPicker"
-                name="colorPicker"
-                value={selectedColor}
-                onChange={handleColorChange}
-            />
+            <input type="color" value={selectedColor} onChange={handleColorChange}/>
         </div>
     )
 }
