@@ -39,6 +39,9 @@
 .infoBar{
     flex: 1;
 }
+.infoBar:hover{
+    color: var(--accent-color);
+}
 .toolsList{
     flex: 1;
     display: flex;
