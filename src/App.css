@@ -28,6 +28,7 @@
 }
 .toolsCard{
     width: 24em;
+    cursor: pointer;
 }
 .navBar{
     padding: 0.5rem;
