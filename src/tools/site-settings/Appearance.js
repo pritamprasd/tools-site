@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../App.css';
 import './SettingsPage.css';
+import LocalStorageService from '../../storage/LocalStorageService';
 
 export default function Appearance() {
     return (
@@ -11,10 +12,13 @@ export default function Appearance() {
 }
 
 function AccentColor() {
-    const [selectedColor, setSelectedColor] = useState('');
+    const accentColorLSKey = "accent-color"
+    const [selectedColor, setSelectedColor] = useState(LocalStorageService.getItem(accentColorLSKey, ""));
     const handleColorChange = (event) => {
-        setSelectedColor(event.target.value);
-        document.documentElement.style.setProperty('--accent-color', event.target.value)
+        const color = event.target.value
+        setSelectedColor(color);
+        LocalStorageService.setItem(accentColorLSKey, color)
+        document.documentElement.style.setProperty('--accent-color', color)
     };
     return (
         <div className='accentColor'>
