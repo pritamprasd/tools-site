@@ -36,12 +36,12 @@ function Tag({name, color, toggleTag}) {
     const[tagBackGround, setTagBackground] = useState('white')
     function handleTagClick(){
         toggleTag(name)
-        if(tagColor == color){
+        if(tagColor === color){
             setTagcolor("white")
         } else {
             setTagcolor(color)
         }
-        if(tagBackGround == color){
+        if(tagBackGround === color){
             setTagBackground("white")
         } else {
             setTagBackground(color)
