@@ -1,30 +1,28 @@
-class LocalStorageService {
-    static setItem(key, value) {
-      try {
+export function setToLS(key, value) {
+    try {
         localStorage.setItem(key, JSON.stringify(value));
-      } catch (error) {
+    } catch (error) {
         console.error(`Error writing to localStorage: ${error}`);
-      }
     }
-  
-    static getItem(key, defaultValue) {
-      try {
+}
+
+export function getFromLS(key, defaultValue) {
+    try {
         const item = localStorage.getItem(key);
         return item ? JSON.parse(item) : null;
-      } catch (error) {
+    } catch (error) {
         console.error(`Error reading from localStorage: ${error}`);
         return defaultValue;
-      }
     }
-  
-    static removeItem(key) {
-      try {
+}
+
+export function deleteFromLS(key) {
+    try {
         localStorage.removeItem(key);
-      } catch (error) {
+    } catch (error) {
         console.error(`Error removing from localStorage: ${error}`);
-      }
     }
-  }
-  
-  export default LocalStorageService;
-  
+}
+
+
+
