@@ -32,23 +32,21 @@ export default function Tags() {
 }
 
 function Tag({name, color, toggleTag}) {
+    const defaultFontWeight = 100
     const[tagColor, setTagcolor] = useState(color)
-    const[tagBackGround, setTagBackground] = useState('white')
+    const[fontWeight, setfontWeight] = useState(defaultFontWeight)
     function handleTagClick(){
         toggleTag(name)
         if(tagColor === color){
             setTagcolor("white")
+            setfontWeight(1000)
         } else {
             setTagcolor(color)
-        }
-        if(tagBackGround === color){
-            setTagBackground("white")
-        } else {
-            setTagBackground(color)
+            setfontWeight(defaultFontWeight)
         }
     }
     return (<div className='tag' style={{
         color: tagColor,
-        backgroundColor: tagBackGround
+        fontWeight: fontWeight
     }} onClick={handleTagClick}>#{name}</div>)
 }
