@@ -49,13 +49,12 @@
     gap: 0.5em;
 }
 .toolLink{
-    /* border: 0.1em solid tomato; */
     border-radius: 1em;
     padding: 0.1em;
     cursor: pointer;
 }
 .toolLink:hover{
-    opacity: 70%;
+    /* opacity: 70%; */
     color: var(--accent-color);
 }
 .tags{
