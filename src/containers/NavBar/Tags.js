@@ -26,7 +26,7 @@ export default function Tags() {
     }
     return (
         <div className='tags'>
-            {tags.map(t => <Tag key={t.id} className="tag" name={t.name} color={t.color} toggleTag={addOrRemoveFromSelectedTags}/>)}
+            {tags.map(t => <Tag className="tag" name={t.name} color={t.color} toggleTag={addOrRemoveFromSelectedTags}/>)}
         </div>
     )
 }
@@ -46,7 +46,7 @@ function Tag({name, color, toggleTag}) {
             setfontWeight(defaultFontWeight)
         }
     }
-    return (<div className='tag' style={{
+    return (<div className='tag' key={name} style={{
         color: tagColor,
         fontWeight: fontWeight
     }} onClick={handleTagClick}>#{name}</div>)

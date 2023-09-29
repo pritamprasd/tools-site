@@ -1,8 +1,5 @@
-:root{
-    --accent-color: tomato;
-    --default-background-color: rgb(48, 46, 46);
-    --default-font-color: rgb(216, 202, 202);
-}
+@import 'css-vars.css';
+
 .app{
     display: grid;
     grid-template-areas: "navbar body";   
@@ -95,4 +92,8 @@
     .navBar{        
         height: 30vh;
     }
+}
+
+.custom-overlay {
+  background-color: var(--default-background-color);
 }

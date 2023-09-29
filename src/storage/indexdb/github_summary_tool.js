@@ -1,32 +1,41 @@
 import db from ".";
 
-export async function addGithubRepository(username, repo, topics, url, created_at, forks, open_issues, watchers, description) {
-    console.log(`Saving project row for repo: ${repo}`);
-    const projectInfo = {
-        username: username,
-        reponame: repo,
-        topics: topics,
-        url: url,
-        created_at: created_at,
-        forks: forks,
-        open_issues: open_issues,
-        watchers: watchers,
-        description: description
-    }
-    await db.github_projects.where("username").equals(username).delete().then(
-        function (deleteCount) {
-            console.log("Deleted " + deleteCount + " objects");
-        });
-    await db.github_projects.add(projectInfo);
+export async function addAllProjectInfoToDBByUsername(all_projects, username){
+    await Promise.all(
+        all_projects.map(async(p) => 
+            {
+                const projectInfo = {
+                    username: username,
+                    reponame: p['name'],
+                    topics: p['topics'],
+                    url: p['html_url'],
+                    created_at:  p['created_at'],
+                    forks: p['forks'],
+                    open_issues: p['open_issues'],
+                    watchers: p['watchers'],
+                    description: p['description']
+                }
+                await db.github_projects
+                        .where("username")
+                        .equals(username)
+                        .delete()
+                        .then(function (deleteCount) {console.log("Deleted " + deleteCount + " objects");});
+                await db.github_projects.add(projectInfo);
+            }
+        )
+    ); 
 }
 
-export async function getAllRepoBy(username, tags = null) {
-    var projects = await db.github_projects.where('username').equalsIgnoreCase(username).toArray();
-    if (tags == null) {
-        return projects;
-    } else {
-        const filtered = projects.map(p => p['topics'].filter(v => tags.includes(v)).length > 0);
-        console.log(`filtered: ${filtered}`)
-        return filtered;
-    }
+export async function getAllReposByUsernameFromDB(username, tags = null) {
+    var projects = await db.github_projects
+        .where('username')
+        .equalsIgnoreCase(username)
+        .toArray();
+    return projects
+}
+
+export async function filterAllProjectsByTag(projects, tags) {
+    const filtered = projects.map(p => p['topics'].filter(t => tags.includes(t)).length > 0);
+    // console.log(`filtered projects: ${filtered}`);
+    return filtered;
 }
