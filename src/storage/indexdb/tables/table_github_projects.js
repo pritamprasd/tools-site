@@ -1,4 +1,4 @@
-import db from ".";
+import db from "..";
 
 export async function addAllProjectInfoToDBByUsername(all_projects, username){
     await Promise.all(

@@ -6,7 +6,7 @@ import { getToolConfigByToolId } from '../../store/helpers';
 import { getRepoInfoAndSaveToDb } from '../../apis/github_apis';
 import Loading from '../../components/loading/Loading';
 import { ProjectModal, ProjectTile } from './ProjectTile';
-import { addAllProjectInfoToDBByUsername, getAllReposByUsernameFromDB } from '../../storage/indexdb/table_github_projects';
+import { addAllProjectInfoToDBByUsername, getAllReposByUsernameFromDB } from '../../storage/indexdb/tables/table_github_projects';
 
 const toolId = "github_summary"
 
