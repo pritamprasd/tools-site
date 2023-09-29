@@ -22,7 +22,7 @@ export function ProjectModal({ toggleShowModal, project }) {
                     <div className="modal-content">
                         <div className="modal-header custom-overlay">
                             <h5 className="modal-title custom-overlay">{project['reponame']}</h5>
-                            <button type="button" className="btn-close" onClick={toggleShowModal} />
+                            <button type="button" className="btn-close btn-close-white" onClick={toggleShowModal} />
                         </div>
                         <div className="modal-body custom-overlay custom-card">
                             <div>Repository Name: <b>{project['reponame']}</b></div>

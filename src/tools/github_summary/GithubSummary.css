@@ -1,30 +1,30 @@
 @import '../../css-vars.css';
 
-.githubsummarycontainer{
+.githubsummarycontainer {
     display: flex;
     flex-direction: column;
 }
 
-.header{
+.header {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
     gap: 2rem;
-    padding: 1rem;    
+    padding: 1rem;
     justify-content: flex-start;
-    align-items: center;    
+    align-items: center;
 }
 
-.searchbutton{
+.searchbutton {
     cursor: pointer;
-    background-color: var(--primary-backgroud);    
+    background-color: var(--primary-backgroud);
 }
 
-.searchbutton:hover{
+.searchbutton:hover {
     background-color: var(--primary-color);
     border-radius: 8px;
 }
 
-.usernameinput{
+.usernameinput {
     width: 50%;
     font-size: large;
     height: 2rem;
@@ -32,60 +32,60 @@
     border-radius: 4px;
 }
 
-.content{
+.content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 4rem;        
+    padding: 4rem;
     justify-items: center;
     gap: 2rem;
     width: 90%;
 }
 
-.projecttile{
+.projecttile {
     border: solid var(--accent-color) 0.1rem;
     border-radius: 0.5rem;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "titl titl titl"
-                         "desc desc desc"
-                         "desc desc desc"
-                         "topi topi topi"
-                         "crat crat watc";
+        "desc desc desc"
+        "desc desc desc"
+        "topi topi topi"
+        "crat crat watc";
     cursor: pointer;
     gap: 0.5rem;
     width: 16rem;
-    min-height: 8rem;    
+    min-height: 8rem;
 }
 
-.projecttile:hover{
+.projecttile:hover {
     background-color: var(--primary-color);
 }
 
-.projecttitle{
+.projecttitle {
     font-size: medium;
     font-weight: bold;
     grid-area: titl;
     justify-self: center;
 }
 
-.projectdesc{
+.projectdesc {
     grid-area: desc;
     font-weight: lighter;
     font-size: x-small;
 }
 
-.watchers{
+.watchers {
     grid-area: watc;
     font-size: x-small;
 }
 
-.created_date{
+.created_date {
     grid-area: crat;
     font-size: x-small;
 }
 
-.topicscontainer{
+.topicscontainer {
     display: flex;
     flex-direction: row;
     gap: 0.1rem;
@@ -93,40 +93,43 @@
     font-size: small;
 }
 
-.topicscontainer>div{
+.topicscontainer>div {
     font-size: small;
     background-color: var(--primary-color);
     border-radius: 0.25rem;
 }
 
 @media screen and (max-width: 1360px) {
-    .content  {        
+    .content {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
 @media screen and (max-width: 1040px) {
-    .content  {        
+    .content {
         grid-template-columns: 1fr 1fr;
         padding: 1.5rem;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .content  {        
+    .content {
         grid-template-columns: 1fr;
         padding: 1rem;
     }
 }
 
-.projectmodal{
+.projectmodal {
     display: grid;
     place-items: center;
 }
 
-.custom-card{
+.custom-card {
     display: flex;
     flex-direction: column;
     gap: 0.2em;
 }
 
+.btn-close {
+    color: red;
+}
