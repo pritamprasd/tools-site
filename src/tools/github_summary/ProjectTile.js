@@ -18,7 +18,7 @@ export function ProjectModal({ toggleShowModal, project }) {
     return (
         <div className="modal" tabIndex="-1" style={{ display: 'block' }}>
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div className="modal-content">
+                <div className="modal-content border border-info">
                     <div className="modal-header custom-overlay">
                         <h5 className="modal-title custom-overlay">{project['reponame']}</h5>
                         <button type="button" className="btn-close btn-close-white" onClick={toggleShowModal} />
