@@ -1,0 +1,189 @@
+.githubsummarycontainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;    
+    gap: 2rem;
+    padding: 1rem;    
+    justify-content: flex-start;
+    align-items: center;    
+}
+
+.searchbutton{
+    cursor: pointer;
+    background-color: var(--primary-backgroud);    
+}
+
+.searchbutton:hover{
+    background-color: var(--primary-color);
+    border-radius: 8px;
+}
+
+.usernameinput{
+    width: 50%;
+    font-size: large;
+    height: 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 4rem;        
+    justify-items: center;
+    gap: 2rem;
+    width: 90%;
+}
+
+.projecttile{
+    border: solid var(--primary-color) 0.1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "titl titl titl"
+                         "desc desc desc"
+                         "desc desc desc"
+                         "topi topi topi"
+                         "crat crat watc";
+    cursor: pointer;
+    gap: 0.5rem;
+    width: 16rem;
+    min-height: 8rem;    
+}
+
+.projecttile:hover{
+    background-color: var(--primary-color);
+}
+
+.projecttitle{
+    font-size: large;
+    font-weight: bold;
+    grid-area: titl;
+    justify-self: center;
+}
+
+.projectdesc{
+    grid-area: desc;
+    font-weight: lighter;
+}
+
+.watchers{
+    grid-area: watc;
+    font-size: small;
+}
+
+.created_date{
+    grid-area: crat;
+    font-size: small;
+}
+
+.topicscontainer{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    grid-area: topi;
+}
+
+.topicscontainer>div{
+    font-size: small;
+    background-color: var(--primary-color);
+    border-radius: 0.25rem;
+}
+
+@media screen and (max-width: 1360px) {
+    .content  {        
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .content  {        
+        grid-template-columns: 1fr 1fr;
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content  {        
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
+
+.darkBG {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.modal {
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;        
+    background: var(--primary-backgroud);    
+    color: white;
+    z-index: 10;
+    border-radius: 16px;
+    box-shadow: 20px 20px 45px -15px var(--primary-color);        
+}
+
+.modalHeader {
+    height: 3rem;        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;    
+    font-size: large;
+    font-weight: bolder;
+}
+
+.closeBtn {
+    cursor: pointer;
+    background: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    border: none;    
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-self: flex-end;
+    margin-top: -7px;
+    margin-right: -7px;
+}
+
+.modalContent {
+    padding: 1rem;    
+    font-size: medium;
+}
+
+@media screen and (max-width: 600px) {
+    .modal  {
+        width: 17rem;
+    }
+}
+
+@media screen and (min-width: 1040px) {
+    .modal  {
+        width: 25rem;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    .modal  {
+        width: 40rem;
+    }
+}
+

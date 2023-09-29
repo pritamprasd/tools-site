@@ -1,5 +1,5 @@
 import React from 'react'
-import GithubSummary from './tools/GithubSummary'
+import GithubSummary from './tools/github_summary/GithubSummary'
 import Appearance from './tools/site-settings/Appearance'
 import IndexDbSettings from './tools/site-settings/IndexDbSettings'
 import MiscSettings from './tools/site-settings/MiscSettings'
@@ -46,6 +46,9 @@ export const appConfig = {
       iconSvg: <svg></svg>,
       tool: <GithubSummary />,
       tags: ["abc", "def", "fghi"],
+      config: {
+        default_username: "pritamprasd",
+      }
     },
     {
       id: "github_summary2",
