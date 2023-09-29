@@ -34,8 +34,6 @@ export async function getAllReposByUsernameFromDB(username, tags = null) {
     return projects
 }
 
-export async function filterAllProjectsByTag(projects, tags) {
-    const filtered = projects.map(p => p['topics'].filter(t => tags.includes(t)).length > 0);
-    // console.log(`filtered projects: ${filtered}`);
-    return filtered;
+export async function purgeTable() {
+    db.github_projects.clear();
 }

@@ -3,10 +3,10 @@ import './GithubSummary.css';
 import '../../App.css'
 import useGlobalState, { GlobalStateNames } from '../../store/store';
 import { getToolConfigByToolId } from '../../store/helpers';
-import { addAllProjectInfoToDBByUsername, getAllReposByUsernameFromDB } from '../../storage/indexdb/github_summary_tool';
 import { getRepoInfoAndSaveToDb } from '../../apis/github_apis';
 import Loading from '../../components/loading/Loading';
 import { ProjectModal, ProjectTile } from './ProjectTile';
+import { addAllProjectInfoToDBByUsername, getAllReposByUsernameFromDB } from '../../storage/indexdb/table_github_projects';
 
 const toolId = "github_summary"
 
