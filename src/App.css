@@ -93,7 +93,3 @@
         height: 30vh;
     }
 }
-
-.custom-overlay {
-  background-color: var(--default-background-color);
-}

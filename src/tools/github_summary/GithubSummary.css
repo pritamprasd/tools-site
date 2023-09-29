@@ -119,17 +119,12 @@
     }
 }
 
-.projectmodal {
-    display: grid;
-    place-items: center;
-}
-
 .custom-card {
     display: flex;
     flex-direction: column;
     gap: 0.2em;
 }
 
-.btn-close {
-    color: red;
+.custom-overlay {
+    background-color: var(--default-background-color);
 }

@@ -16,22 +16,20 @@ export function ProjectTile({ project, setActiveProject }) {
 
 export function ProjectModal({ toggleShowModal, project }) {
     return (
-        <div className="projectmodal">
-            <div className="modal show" tabIndex="-1" style={{ display: 'block' }}>
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header custom-overlay">
-                            <h5 className="modal-title custom-overlay">{project['reponame']}</h5>
-                            <button type="button" className="btn-close btn-close-white" onClick={toggleShowModal} />
-                        </div>
-                        <div className="modal-body custom-overlay custom-card">
-                            <div>Repository Name: <b>{project['reponame']}</b></div>
-                            <div style={{fontSize: 'smaller'}}>{project['description']}</div>
-                            {project['topics'].length !== 0 && <div>Topics: <b>{project['topics'].map(t => t+ ", ")}</b></div>}
-                            <div style={{fontSize: 'small'}}>Created: {project['created_at']}</div>
-                            <div style={{fontSize: 'small'}}>Watchers: {project['watchers']} &#x1F464;</div>
-                            <a style={{fontSize: 'small'}} href={project['url']}>{project['url']}</a>
-                        </div>
+        <div className="modal" tabIndex="-1" style={{ display: 'block' }}>
+            <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div className="modal-content">
+                    <div className="modal-header custom-overlay">
+                        <h5 className="modal-title custom-overlay">{project['reponame']}</h5>
+                        <button type="button" className="btn-close btn-close-white" onClick={toggleShowModal} />
+                    </div>
+                    <div className="modal-body custom-overlay custom-card">
+                        <div>Repository Name: <b>{project['reponame']}</b></div>
+                        <div style={{ fontSize: 'smaller' }}>{project['description']}</div>
+                        {project['topics'].length !== 0 && <div>Topics: <b>{project['topics'].map(t => t + ", ")}</b></div>}
+                        <div style={{ fontSize: 'small' }}>Created: {project['created_at']}</div>
+                        <div style={{ fontSize: 'small' }}>Watchers: {project['watchers']} &#x1F464;</div>
+                        <a style={{ fontSize: 'small' }} href={project['url']}>{project['url']}</a>
                     </div>
                 </div>
             </div>
