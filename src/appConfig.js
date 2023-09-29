@@ -42,10 +42,10 @@ export const appConfig = {
     {
       id: "github_summary",
       title: "Github Summary",
-      description: "Laboris nulla ipsum commodo consectetur exercitation tempor nostrud cupidatat sunt officia irure proident fugiat excepteur.",
+      description: "Pulls up Github Public data for a username, and allows set of analytics on it.",
       iconSvg: <svg></svg>,
       tool: <GithubSummary />,
-      tags: ["abc", "def", "fghi"],
+      tags: ["github", "search", "repository"],
       config: {
         default_username: "pritamprasd",
       }
