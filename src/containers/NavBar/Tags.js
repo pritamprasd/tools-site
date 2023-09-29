@@ -33,12 +33,13 @@ export default function Tags() {
 
 function Tag({name, color, toggleTag}) {
     const defaultFontWeight = 100
+    const defaultAccentColor = document.documentElement.style.getPropertyValue('--accent-color')
     const[tagColor, setTagcolor] = useState(color)
     const[fontWeight, setfontWeight] = useState(defaultFontWeight)
     function handleTagClick(){
         toggleTag(name)
         if(tagColor === color){
-            setTagcolor("white")
+            setTagcolor(defaultAccentColor)
             setfontWeight(1000)
         } else {
             setTagcolor(color)

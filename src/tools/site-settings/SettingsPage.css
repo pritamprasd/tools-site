@@ -1,6 +1,7 @@
 .apprearanceContainer{
     display: flex;
     flex-direction: column;
+    gap: 0.2em;
 }
 
 .apprearanceContainer > div {

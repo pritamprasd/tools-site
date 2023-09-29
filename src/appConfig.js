@@ -9,6 +9,14 @@ export const LSKeys = {
     key: 'accent-color',
     type: 'color'
   },
+  bgColor: {
+    key: 'bg-color',
+    type: 'color'
+  },
+  fontColor: {
+    key: 'font-color',
+    type: 'color'
+  },
 }
 
 export const tabs = [
