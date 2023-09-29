@@ -6,7 +6,7 @@ import { LSKeys } from '../../appConfig';
 
 export default function Appearance() {
     return (
-        <div className='apprearanceContainer'>
+        <div className='baseTabsContainer'>
             <AccentColor />
             <BackgroundColor/>
             <FontColor/>

@@ -1,11 +1,11 @@
-.apprearanceContainer{
+.baseTabsContainer{
     display: flex;
     flex-direction: column;
-    gap: 0.2em;
+    gap: 0.4em;
 }
 
-.apprearanceContainer > div {
+.baseTabsContainer > div {
     display: flex;
     justify-content: space-between;
-    padding-right: 3em;
+    padding-right: 2em;
 }

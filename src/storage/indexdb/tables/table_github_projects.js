@@ -33,7 +33,3 @@ export async function getAllReposByUsernameFromDB(username, tags = null) {
         .toArray();
     return projects
 }
-
-export async function purgeTable() {
-    db.github_projects.clear();
-}
