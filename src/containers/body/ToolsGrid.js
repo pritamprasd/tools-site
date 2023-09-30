@@ -4,6 +4,7 @@ import ToolsCard from './ToolsCard';
 import { appConfig } from '../../appConfig';
 import { useGlobalContext } from '../../store/globalVars';
 import { getToolFromToolId } from '../../store/helpers';
+import SearchTools from './SearchTools';
 
 export default function ToolsGrid() {
   const { globalVariables, _ } = useGlobalContext();
@@ -21,9 +22,18 @@ export default function ToolsGrid() {
   }, [globalVariables])
 
   return (
-    <div className='toolsGrid'>
-      {globalVariables.activeToolId !== "" && getToolFromToolId(globalVariables.activeToolId)}
-      {globalVariables.activeToolId === "" && filteredTools.map(t => <ToolsCard tileInfo={t} key={t.id} />)}
+    <div>
+      {globalVariables.activeToolId !== "" && <div className='toolsContainer'>
+          {getToolFromToolId(globalVariables.activeToolId)}
+      </div>
+      }
+      {globalVariables.activeToolId === "" && <div>
+        <SearchTools toolsList={filteredTools} updateToolsList={setfilteredTools} />
+        <div className='toolsGrid'>
+          {filteredTools.map(t => <ToolsCard tileInfo={t} key={t.id} />)}
+        </div>
+      </div>
+      }
     </div>
   )
 }

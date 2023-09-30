@@ -28,14 +28,14 @@
     padding-left: 2rem;
 }
 .toolsCard{
-    width: 24em;
+    max-width: 24em;
     cursor: pointer;
 }
 .navBar{
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    height: 95vh;
+    min-height: 95vh;
 }
 .infoBar{
     flex: 1;
@@ -57,6 +57,10 @@
 .toolLink:hover{
     color: var(--accent-color);
 }
+.settingsPageContainer{
+    cursor: pointer;
+    flex: 0.3;
+}
 .tags{
     flex: 1;
     display: flex;
@@ -68,10 +72,11 @@
     color: var(--accent-color);
 }
 .socialLinks{
-    align-self: flex-end;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
 }
 .tag{
-    border-radius: 15%;
     height: 2em;
     cursor: pointer;
     padding-right: 0.5em;
@@ -80,16 +85,29 @@
     font-size: 2.3em;
     cursor: pointer;
 }
+.toolsContainer{
+    padding-top: 1.5em;
+}
 @media (max-width: 767px) {
     .app {
         grid-template-areas: "navbar"
                              "body";
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;                
     }
     .toolsGrid {
         flex-direction: column;
+    }  
+    .navBar{
+        min-height: auto;
+        gap: 1em
+    }  
+    .toolsList{
+        display: none;
     }
-    .navBar{        
-        height: 30vh;
+    .infoBar{
+        flex: auto;
+    }
+    .tag{
+        font-size: small;
     }
 }
