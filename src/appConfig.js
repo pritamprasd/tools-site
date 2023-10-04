@@ -3,6 +3,7 @@ import GithubSummary from './tools/github_summary/GithubSummary'
 import Appearance from './tools/site-settings/Appearance'
 import IndexDbSettings from './tools/site-settings/IndexDbSettings'
 import MiscSettings from './tools/site-settings/MiscSettings'
+import Pretify from './tools/prettify/Pretify'
 
 export const LSKeys = {
   accentColor: {
@@ -51,12 +52,12 @@ export const appConfig = {
       }
     },
     {
-      id: "github_summary2",
-      title: "Yolo Summary 2",
-      description: "Laboris nulla ipsum commodo consectetur exercitation tempor nostrud cupidatat sunt officia irure proident fugiat excepteur.",
+      id: "pretify",
+      title: "Code Formatter",
+      description: "formats yaml, json",
       iconSvg: <svg></svg>,
-      tool: <GithubSummary />,
-      tags: ["xyz", "def", "fghi"]
+      tool: <Pretify/>,
+      tags: ["jwt", "json", "yaml"]
     },
     {
       id: "github_summary3",
