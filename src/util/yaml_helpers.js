@@ -3,11 +3,17 @@ import jsYaml from 'js-yaml';
 export function getYamlOutput(inputText){
     try {
         var santitized = inputText.replace(/:\s*-/g, ':\n    -');
-        santitized = jsYaml.dump(santitized, { indent: 2 });
         const parsedYaml = jsYaml.load(santitized);
-        return JSON.stringify(parsedYaml)
+        return jsYaml.dump(parsedYaml, { indent: 2 });
     } catch (error) {
-        return `Error in getYamlOutput: \n${error}`
+        // const lines = inputText.split('\n');
+        // const errors = [];
+        // const errorLines = error.mark.name.split('\n');
+        // errorLines.forEach((line, index) => {
+        //     const lineNumber = error.mark.line + index;
+        //     errors.push(`Line ${lineNumber}: ${line}`);
+        // });        
+        return `Error at line ${error.mark.line}, position: ${error.mark.position}`
     }
 }
 
