@@ -1,0 +1,113 @@
+@import 'css-vars.css';
+
+.app{
+    display: grid;
+    grid-template-areas: "navbar body";   
+    grid-template-columns: 1fr 8fr;
+    padding: 0.5em;
+    background-color: var(--default-background-color);
+    color: var(--default-font-color);
+}
+.mainBody{
+    grid-area: body;
+    display: flex;   
+    flex-direction: column;
+}
+.searchTools{
+    padding: 2rem;
+}
+.searchInput{
+    width: 75vw;
+}
+.toolsGrid{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    padding-left: 2rem;
+}
+.toolsCard{
+    max-width: 24em;
+    cursor: pointer;
+}
+.navBar{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+}
+.infoBar{
+    flex: 1;
+}
+.infoBar:hover{
+    color: var(--accent-color);
+}
+.toolsList{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.toolLink{
+    border-radius: 1em;
+    padding: 0.1em;
+    cursor: pointer;
+}
+.toolLink:hover{
+    color: var(--accent-color);
+}
+.settingsPageContainer{
+    cursor: pointer;
+    flex: 0.3;
+}
+.tags{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.tag:hover{
+    opacity: 70%;
+    color: var(--accent-color);
+}
+.socialLinks{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+}
+.tag{
+    height: 2em;
+    cursor: pointer;
+    padding-right: 0.5em;
+}
+.siteHeader{
+    font-size: 2.3em;
+    cursor: pointer;
+}
+.toolsContainer{
+    padding-top: 1.5em;
+}
+@media (max-width: 767px) {
+    .app {
+        grid-template-areas: "navbar"
+                             "body";
+        grid-template-columns: 1fr;                
+    }
+    .toolsGrid {
+        flex-direction: column;
+    }  
+    .navBar{
+        min-height: auto;
+        gap: 1em
+    }  
+    .toolsList{
+        display: none;
+    }
+    .infoBar{
+        flex: auto;
+    }
+    .tag{
+        font-size: small;
+    }
+}

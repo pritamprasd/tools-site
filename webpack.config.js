@@ -19,19 +19,18 @@ module.exports = {
                 exclude: /node_modules/,
                 use: 'ts-loader',
             },
-            // {
-            //     test: /\.(png|jpe?g|gif)$/i,
-            //     use: [
-            //         {
-            //             loader: 'url-loader',
-            //             options: {
-            //                 limit: 8192,
-            //                 name: 'images/[name].[ext]',
-            //             },
-            //         },
-            //     ],
-            // },
-        ],
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
+            {
+                test: /\.css$/, // Match CSS files
+                use: ['style-loader', 'css-loader'],
+            },
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -55,7 +54,7 @@ module.exports = {
         }),
     ],
     performance: {
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000
+        maxEntrypointSize: 2048000,
+        maxAssetSize: 2048000
     },
 };

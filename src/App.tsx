@@ -1,7 +1,16 @@
-import React from 'react'
+import React from 'react';
+import './App.css';
+import NavBar from './containers/NavBar';
+import MainBody from './containers/MainBody';
+import { GlobalStateProvider } from './store/globalVars';
 
 export default function App() {
   return (
-    <div>1.0.1-test</div>
+    <GlobalStateProvider>
+      <div className='app'>
+        <NavBar />
+        <MainBody />
+      </div>
+    </GlobalStateProvider>
   )
 }
