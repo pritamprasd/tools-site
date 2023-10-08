@@ -6,8 +6,8 @@
   "author": "Pritam <mail@pritam.dev>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack build --mode development"
+    "start": "webpack serve --mode production",
+    "build": "webpack build --mode production"
   },
   "devDependencies": {
     "html-webpack-plugin": "^5.5.3",
@@ -16,7 +16,8 @@
     "typescript": "^4.9.5",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
     "@types/react": "^18.2.25",
