@@ -110,4 +110,7 @@
     .tag{
         font-size: small;
     }
+    .socialLinks{
+        display: none;
+    }
 }

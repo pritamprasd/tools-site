@@ -75,5 +75,14 @@ export const appConfig = {
       tool: <GithubSummary />,
       tags: ["xyzs", "def"]
     }
+    ,
+    {
+      id: "github_summary5",
+      title: "Github Summary 5",
+      description: "Laboris nulla ipsum commodo consectetur exercitation tempor nostrud cupidatat sunt officia irure proident fugiat excepteur.",
+      iconSvg: <svg></svg>,
+      tool: <GithubSummary />,
+      tags: ["xyzs", "def"]
+    }
   ]
 }

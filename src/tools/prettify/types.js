@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DownloadButton } from './OutputButtons';
+import { CopyButton, DownloadButton } from './OutputButtons';
 
 export const Types = {
     jwt: "jwt",
@@ -12,12 +12,18 @@ export function getOutButtonByType(selectedType, inputText, outputText) {
     if (inputText !== "") {
         switch (selectedType) {
             case Types.yaml:
+                <div>
+                    <CopyButton text={outputText} type={selectedType} />
+                </div>
                 break;
             case Types.json:
-                return <div></div>
+                return <div>
+                    <CopyButton text={outputText} type={selectedType} />
+                </div>
             case Types.jwt:
                 return <div>
                     <DownloadButton text={outputText} type={selectedType} />
+                    <CopyButton text={outputText} type={selectedType} />
                 </div>
             case Types.none:
                 return <div></div>

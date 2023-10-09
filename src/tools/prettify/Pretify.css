@@ -24,13 +24,13 @@
     grid-template-rows: 25fr 1fr;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
     .container-pretify-ip {
         grid-template-columns: 1fr;
-        gap: 0.5em;
+        gap: 0.6em;
     }
     .custom-text-input{
-        height: 30vh;
+        height: 35vh;
     }
     .text-output{
         height: 30vh;        
@@ -39,4 +39,9 @@
         flex-direction: row;
         justify-content: space-evenly;
     }
+}
+
+.outputButtons > div {
+    display: flex;
+    justify-content: space-evenly;
 }
