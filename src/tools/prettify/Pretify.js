@@ -41,7 +41,7 @@ export default function Pretify() {
         }
     }
     return (
-        <div className='.container-pretify'>
+        <div className='container-pretify-ip'>
             <div>
                 <textarea type="text" className="form-control custom-text-input" placeholder="input text"
                     value={inputText} onChange={e => setinputText(e.target.value)} />

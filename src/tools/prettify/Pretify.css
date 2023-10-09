@@ -1,6 +1,6 @@
 @import '../../css-vars.css';
 
-.container-pretify{
+.container-pretify-ip{
     display: grid;
     grid-template-columns: 5fr 1fr 5fr;
     gap: 2em;
@@ -24,11 +24,19 @@
     grid-template-rows: 25fr 1fr;
 }
 
-.syntax-highlighted-text{
-}
-
 @media screen and (max-width: 600px) {
-    .container-pretify {
+    .container-pretify-ip {
         grid-template-columns: 1fr;
+        gap: 0.5em;
+    }
+    .custom-text-input{
+        height: 30vh;
+    }
+    .text-output{
+        height: 30vh;        
+    }
+    .buttons{
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 }
