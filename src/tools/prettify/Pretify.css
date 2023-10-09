@@ -1,6 +1,6 @@
 @import '../../css-vars.css';
 
-.container{
+.container-pretify{
     display: grid;
     grid-template-columns: 5fr 1fr 5fr;
     gap: 2em;
@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    .container {
+    .container-pretify {
         grid-template-columns: 1fr;
     }
 }

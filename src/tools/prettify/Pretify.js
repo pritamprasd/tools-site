@@ -41,7 +41,7 @@ export default function Pretify() {
         }
     }
     return (
-        <div className='container'>
+        <div className='.container-pretify'>
             <div>
                 <textarea type="text" className="form-control custom-text-input" placeholder="input text"
                     value={inputText} onChange={e => setinputText(e.target.value)} />
