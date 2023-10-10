@@ -1,8 +1,10 @@
 import React from 'react'
-import GithubSummary from "../tools/github_summary/GithubSummary";
-import SettingsPage from '../tools/site-settings/SettingsPage';
 import { appConfig } from '../appConfig';
-import Pretify from '../tools/prettify/Pretify';
+
+const GithubSummary = React.lazy(() => import("../tools/github_summary/GithubSummary"))
+const SettingsPage = React.lazy(() => import("../tools/site-settings/SettingsPage"))
+const Pretify = React.lazy(() => import("../tools/prettify/Pretify"))
+const ImageClassifier = React.lazy(() => import("../tools/image_classifier/ImageClassifier"))
 
 export function getToolFromToolId(toolId) {
     switch (toolId) {
@@ -12,6 +14,8 @@ export function getToolFromToolId(toolId) {
             return <SettingsPage />
         case "pretify":
             return <Pretify />
+        case "image_classifier":
+            return <ImageClassifier/>
         default:
             return <div>404</div>;
     }

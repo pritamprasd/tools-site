@@ -7,6 +7,7 @@
     padding: 0.5em;
     background-color: var(--default-background-color);
     color: var(--default-font-color);
+    min-height: 100vh;
 }
 .mainBody{
     grid-area: body;

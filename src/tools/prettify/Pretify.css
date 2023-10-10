@@ -50,6 +50,7 @@
 .inputButtons{
     display: flex;
     flex-direction: row;
-    gap: 0.5em;
+    gap: 1em;
     margin-bottom: 0.4em;
+    padding: 0.7em;
 }

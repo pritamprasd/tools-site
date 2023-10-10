@@ -6,8 +6,8 @@
   "author": "Pritam <mail@pritam.dev>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --mode production",
-    "build": "webpack build --mode production"
+    "start": "webpack serve --mode development",
+    "build": "webpack build --mode development"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
@@ -27,6 +27,8 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@tensorflow/tfjs": "^4.11.0",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.11",
     "bootstrap": "^5.3.2",

@@ -1,0 +1,37 @@
+.image_container{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.uploaded_image{
+    height: 60vh;
+    padding-left: 1rem;
+}
+
+.upload_button{
+    display: none;
+}
+
+.upload_label{
+    cursor: pointer;
+    background-color: var(--primary-color);
+    height: 1.5rem;
+    width: 4rem;
+    text-align: center;
+    padding-top: 0.25rem;
+}
+
+.pred_1{
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}

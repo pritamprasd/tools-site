@@ -22,30 +22,10 @@ export function getOutButtonByType(selectedType, inputText, outputText) {
     if (inputText !== "") {
         switch (selectedType) {
             case Types.yaml:
-                return <div>
-                    <DownloadButton text={outputText} type={selectedType} />
-                    <CopyButton text={outputText} type={selectedType} />
-                </div>
             case Types.json:
-                return <div>
-                    <DownloadButton text={outputText} type={selectedType} />
-                    <CopyButton text={outputText} type={selectedType} />
-                </div>
             case Types.jwt:
-                return <div>
-                    <DownloadButton text={outputText} type={selectedType} />
-                    <CopyButton text={outputText} type={selectedType} />
-                </div>
             case Types.json:
-                return <div>
-                    <DownloadButton text={outputText} type={selectedType} />
-                    <CopyButton text={outputText} type={selectedType} />
-                </div>
             case Types.b64encode:
-                return <div>
-                    <DownloadButton text={outputText} type={selectedType} />
-                    <CopyButton text={outputText} type={selectedType} />
-                </div>
             case Types.b64decode:
                 return <div>
                     <DownloadButton text={outputText} type={selectedType} />

@@ -4,6 +4,7 @@ import Appearance from './tools/site-settings/Appearance'
 import IndexDbSettings from './tools/site-settings/IndexDbSettings'
 import MiscSettings from './tools/site-settings/MiscSettings'
 import Pretify from './tools/prettify/Pretify'
+import ImageClassifier from './tools/image_classifier/ImageClassifier'
 
 export const LSKeys = {
   accentColor: {
@@ -60,11 +61,11 @@ export const appConfig = {
       tags: ["jwt", "json", "yaml"]
     },
     {
-      id: "github_summary3",
-      title: "Github Summary 3",
+      id: "image_classifier",
+      title: "Image Detect",
       description: "Laboris nulla ipsum commodo consectetur exercitation tempor nostrud cupidatat sunt officia irure proident fugiat excepteur.",
       iconSvg: <svg></svg>,
-      tool: <GithubSummary />,
+      tool: <ImageClassifier />,
       tags: ["abc", "defg", "adgs", "sdsf", "sgst", "sgts"],
     },
     {

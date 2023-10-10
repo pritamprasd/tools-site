@@ -54,7 +54,7 @@ module.exports = {
         }),
     ],
     performance: {
-        maxEntrypointSize: 2048000,
-        maxAssetSize: 2048000
+        maxEntrypointSize: 8196000,
+        maxAssetSize: 8196000
     },
 };

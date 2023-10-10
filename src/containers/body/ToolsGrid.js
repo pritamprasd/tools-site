@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import '../../App.css';
 import ToolsCard from './ToolsCard';
 import { appConfig } from '../../appConfig';
@@ -22,18 +22,21 @@ export default function ToolsGrid() {
   }, [globalVariables])
 
   return (
-    <div>
-      {globalVariables.activeToolId !== "" && <div className='toolsContainer'>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div>
+        {globalVariables.activeToolId !== "" && <div className='toolsContainer'>
           {getToolFromToolId(globalVariables.activeToolId)}
-      </div>
-      }
-      {globalVariables.activeToolId === "" && <div>
-        <SearchTools toolsList={filteredTools} updateToolsList={setfilteredTools} />
-        <div className='toolsGrid'>
-          {filteredTools.map(t => <ToolsCard tileInfo={t} key={t.id} />)}
         </div>
+        }
+        {globalVariables.activeToolId === "" && <div>
+          <SearchTools toolsList={filteredTools} updateToolsList={setfilteredTools} />
+          <div className='toolsGrid'>
+            {filteredTools.map(t => <ToolsCard tileInfo={t} key={t.id} />)}
+          </div>
+        </div>
+        }
       </div>
-      }
-    </div>
+    </Suspense >
+
   )
 }
