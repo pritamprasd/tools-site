@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Types } from './types';
+import { copyToClipboard } from '../../util/clipboard';
 
 export function DownloadButton({ text, type }) {
     function handleJsonDownload() {
@@ -14,10 +15,10 @@ export function DownloadButton({ text, type }) {
     function handleDownloadButtonClick(type) {
         switch (type) {
             case Types.yaml:
-                break;
             case Types.json:
-                return;
             case Types.jwt:
+            case Types.b64encode:
+            case Types.b64decode:
                 handleJsonDownload()
                 break;
             default:
@@ -30,20 +31,23 @@ export function DownloadButton({ text, type }) {
 
 export function CopyButton({ text, type }) {
     function handleCopyClick() {
-        const textArea = document.createElement('textarea');
-        textArea.value = JSON.stringify(text);
-        textArea.style.position = 'fixed';
-        textArea.style.top = 0;
-        textArea.style.left = 0;
-        textArea.style.opacity = 0;
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-            document.execCommand('copy');
-        } catch (err) {
-            alert(`Copy to clipboard failed: ${err}`);
+        var toCopy = ""
+        switch (type) {
+            case Types.json:
+                toCopy = JSON.stringify(text)
+                break
+            case Types.yaml:
+            case Types.jwt:
+            case Types.b64encode:
+            case Types.b64decode:
+                toCopy = text
+                break;
+            default:
+                alert("CopyButton: Invalid converter : " + type)
+                break;
         }
-        document.body.removeChild(textArea);
+
+        copyToClipboard(toCopy);
     }
     return <button onClick={handleCopyClick} className='btn btn-outline-primary'>Copy</button>;
 }
