@@ -39,6 +39,11 @@ module.exports = {
         new WorkboxWebpackPlugin.GenerateSW({
             clientsClaim: true,
             skipWaiting: true,
+            maximumFileSizeToCacheInBytes: 50 * 1024 * 1024,
+            runtimeCaching: [{
+                urlPattern: ({ request, url }) => "*",
+                handler: 'StaleWhileRevalidate',                
+            }]
         }),
         new CopyWebpackPlugin({
             patterns: [
