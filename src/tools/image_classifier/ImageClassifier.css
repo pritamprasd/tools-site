@@ -30,7 +30,7 @@
     color: var(--primary-color);
 }
 
-.buttons{
+.ic_buttons{
     display: flex;
     flex-direction: row;
     gap: 2rem;

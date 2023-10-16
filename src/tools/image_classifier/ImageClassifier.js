@@ -37,7 +37,7 @@ export default function ImageClassifier() {
         <div className="image_container">
             {!loading && imageSelected && <img className="uploaded_image" id="main_image" alt='Whooopss!!'
                 src={URL.createObjectURL(imageSelected)}></img>}
-            {!loading && imageSelected && <div className="buttons">
+            {!loading && imageSelected && <div className="ic_buttons">
                 <button onClick={() => setImageSelected(null)}>Remove</button>    
             </div>}
             {!loading && imageSelected && predictions &&
