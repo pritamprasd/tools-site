@@ -1,0 +1,39 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+    - name: Build
+      run: cargo build --verbose
+    - name: Run tests
+      run: cargo test --verbose
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+      - name: Build
+        run: |
+          cargo build --verbose          
+
+      - name: Run Your Command
+        run: |
+          echo "Running your command here"
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "pritam.prasd@gmail.com"
+          git config --local user.name "update-rust-build-files-script"
+          git add .
+          git diff --quiet || git commit -m "Automated update for rust bulid files"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
