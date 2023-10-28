@@ -1,4 +1,4 @@
-name: Rust
+name: Sync Rust build files
 
 on:
   push:
@@ -8,9 +8,8 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  update:
+  update-code-if-reqd:    
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
