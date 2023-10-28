@@ -6,6 +6,7 @@ import MiscSettings from './tools/site-settings/MiscSettings'
 import Pretify from './tools/prettify/Pretify'
 import ImageClassifier from './tools/image_classifier/ImageClassifier'
 import TaskPlanner from './tools/task_planner/TaskPlanner'
+import CryptoGen from './tools/crypto_generator/CryptoGen'
 
 export const LSKeys = {
   accentColor: {
@@ -79,12 +80,12 @@ export const appConfig = {
     }
     ,
     {
-      id: "github_summary5",
-      title: "Github Summary 5",
-      description: "Laboris nulla ipsum commodo consectetur exercitation tempor nostrud cupidatat sunt officia irure proident fugiat excepteur.",
+      id: "crypto_generators",
+      title: "Crypto Generators",
+      description: "RSA 1024bit key gen",
       iconSvg: <svg></svg>,
-      tool: <GithubSummary />,
-      tags: ["xyzs", "def"]
+      tool: <CryptoGen />,
+      tags: ["crypto", "generators"]
     }
   ]
 }

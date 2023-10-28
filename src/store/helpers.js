@@ -1,6 +1,7 @@
 import React from 'react'
 import { appConfig } from '../appConfig';
 import TaskPlanner from '../tools/task_planner/TaskPlanner';
+import CryptoGen from '../tools/crypto_generator/CryptoGen';
 
 const GithubSummary = React.lazy(() => import("../tools/github_summary/GithubSummary"))
 const SettingsPage = React.lazy(() => import("../tools/site-settings/SettingsPage"))
@@ -19,6 +20,8 @@ export function getToolFromToolId(toolId) {
             return <ImageClassifier />
         case "task_planner":
             return <TaskPlanner />
+        case "crypto_generators":
+            return <CryptoGen />
         default:
             return <div>404</div>;
     }
