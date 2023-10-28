@@ -1,4 +1,4 @@
-name: Sync Rust build files
+name: Will Pass if Rust code is updated 
 
 on:
   push:
