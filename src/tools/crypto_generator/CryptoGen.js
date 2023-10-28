@@ -8,7 +8,7 @@ export default function CryptoGen() {
     useEffect(() => {
         const loadWasm = async () => {
             try {
-                const path_to_wasm = "/wasm_crypto_bg.wasm";
+                const path_to_wasm = "/wasm_crypto.wasm";
                 await rust_wasm_init(path_to_wasm);
                 const result = add(5, 3);
                 alert('Result of addition: '+ result);
