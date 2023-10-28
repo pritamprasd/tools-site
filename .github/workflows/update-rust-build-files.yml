@@ -26,7 +26,7 @@ jobs:
           git pull
           wasm-pack build
           git add .
-          git diff --quiet || git commit -m "Automated update for rust bulid files"
+          git commit -m "Automated update for rust bulid files"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
