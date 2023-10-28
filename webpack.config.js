@@ -61,7 +61,8 @@ module.exports = {
                     to: 'images',       // Destination directory in 'dist'
                 },
                 {
-                    from: 'src/wasm-crypto/pkg/wasm_crypto_bg.wasm'               
+                    from: 'src/wasm-crypto/pkg/wasm_crypto_bg.wasm',
+                    to: 'wasm_crypto.wasm'
                 }
             ]
         }),

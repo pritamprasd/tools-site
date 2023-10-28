@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack serve --open --mode development",
     "local-build": "cd ./src/wasm-crypto && wasm-pack build  --release --target web && cd ../.. && webpack build --mode development",
-    "build": "cd ./src/wasm-crypto && npm install wasm-pack && wasm-pack build  --release --target web && cd ../.. && webpack build --mode development"
+    "build": "cd ./src/wasm-crypto && wasm-pack build --release --target web && cd ../.. && webpack build --mode development"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
