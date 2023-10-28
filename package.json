@@ -6,8 +6,8 @@
   "author": "Pritam <mail@pritam.dev>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack build --mode development"
+    "start": "webpack serve --open --mode development",
+    "build": "cd ./src/wasm-crypto && wasm-pack build  --release --target web && cd ../.. && webpack build --mode development"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
@@ -21,6 +21,7 @@
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.0",
     "typescript": "^4.9.5",
+    "wasm-loader": "^1.3.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",

@@ -30,6 +30,11 @@ module.exports = {
                 test: /\.css$/, // Match CSS files
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.wasm$/,
+                type: 'javascript/auto',
+                loader: 'wasm-loader',
+            },
         ]
     },
     plugins: [
@@ -42,7 +47,7 @@ module.exports = {
             maximumFileSizeToCacheInBytes: 50 * 1024 * 1024,
             runtimeCaching: [{
                 urlPattern: ({ request, url }) => "*",
-                handler: 'StaleWhileRevalidate',                
+                handler: 'StaleWhileRevalidate',
             }]
         }),
         new CopyWebpackPlugin({
