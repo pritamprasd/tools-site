@@ -6,8 +6,8 @@
   "author": "Pritam <mail@pritam.dev>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --mode production",
-    "build": "webpack build --mode production"
+    "start": "webpack serve --mode development",
+    "build": "webpack build --mode development"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",

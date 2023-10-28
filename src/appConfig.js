@@ -5,6 +5,7 @@ import IndexDbSettings from './tools/site-settings/IndexDbSettings'
 import MiscSettings from './tools/site-settings/MiscSettings'
 import Pretify from './tools/prettify/Pretify'
 import ImageClassifier from './tools/image_classifier/ImageClassifier'
+import TaskPlanner from './tools/task_planner/TaskPlanner'
 
 export const LSKeys = {
   accentColor: {
@@ -66,15 +67,15 @@ export const appConfig = {
       description: "Laboris nulla ipsum commodo consectetur exercitation tempor nostrud cupidatat sunt officia irure proident fugiat excepteur.",
       iconSvg: <svg></svg>,
       tool: <ImageClassifier />,
-      tags: ["abc", "defg", "adgs", "sdsf", "sgst", "sgts"],
+      tags: ["image", "classify"],
     },
     {
-      id: "github_summary4",
-      title: "Github Summary 4",
-      description: "Laboris nulla ipsum commodo consectetur exercitation tempor nostrud cupidatat sunt officia irure proident fugiat excepteur.",
+      id: "task_planner",
+      title: "Task Planner",
+      description: "Task Planner for now",
       iconSvg: <svg></svg>,
-      tool: <GithubSummary />,
-      tags: ["xyzs", "def"]
+      tool: <TaskPlanner />,
+      tags: ["task", "plan"]
     }
     ,
     {
