@@ -23,26 +23,6 @@ export function subtract(a, b) {
     return ret;
 }
 
-/**
-* @param {number} a
-* @param {number} b
-* @returns {number}
-*/
-export function mul(a, b) {
-    const ret = wasm.mul(a, b);
-    return ret;
-}
-
-/**
-* @param {number} a
-* @param {number} b
-* @returns {number}
-*/
-export function div(a, b) {
-    const ret = wasm.div(a, b);
-    return ret;
-}
-
 const lTextDecoder = typeof TextDecoder === 'undefined' ? (0, module.require)('util').TextDecoder : TextDecoder;
 
 let cachedTextDecoder = new lTextDecoder('utf-8', { ignoreBOM: true, fatal: true });
