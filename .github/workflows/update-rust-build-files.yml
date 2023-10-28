@@ -14,16 +14,13 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
-      - name: Build
+      - name: Build Rust
         run: |
           cd src/wasm-crypto
           cargo build --verbose          
-
-      - name: Run Your Command
-        run: |
-          echo "Running your command here"
-
-      - name: Commit and Push Changes
+          wasm-pack build
+          
+      - name: Commit Rust build and Push Changes
         run: |
           git config --local user.email "pritam.prasd@gmail.com"
           git config --local user.name "update-rust-build-files-script"
