@@ -17,6 +17,11 @@ pub fn subtract(a: i32, b: i32) -> i32 {
 }
 
 #[wasm_bindgen]
+pub fn mul(a: i32, b: i32) -> i32 {
+    a * b
+}
+
+#[wasm_bindgen]
 extern {
     fn alert(s: &str);
 }
