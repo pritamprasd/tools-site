@@ -12,6 +12,11 @@ pub fn add(a: i32, b: i32) -> i32 {
 }
 
 #[wasm_bindgen]
+pub fn sub(a: i32, b: i32) -> i32 {
+    a - b
+}
+
+#[wasm_bindgen]
 extern {
     fn alert(s: &str);
 }
