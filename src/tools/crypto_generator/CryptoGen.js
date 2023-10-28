@@ -11,7 +11,7 @@ export default function CryptoGen() {
                 const path_to_wasm = "/wasm_crypto.wasm";
                 await rust_wasm_init(path_to_wasm);
                 const result = add(5, 3);
-                alert('Result of addition: '+ result);
+                alert('Result of addition:   '+ result);
             } catch (error) {
                 console.error('Error loading WebAssembly:', error);
             }
