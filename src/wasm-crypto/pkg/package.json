@@ -7,11 +7,13 @@
   "files": [
     "wasm_crypto_bg.wasm",
     "wasm_crypto.js",
+    "wasm_crypto_bg.js",
     "wasm_crypto.d.ts"
   ],
   "module": "wasm_crypto.js",
   "types": "wasm_crypto.d.ts",
   "sideEffects": [
+    "./wasm_crypto.js",
     "./snippets/*"
   ]
 }
