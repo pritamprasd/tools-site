@@ -14,12 +14,16 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+      
+      - name: Setup wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
       - name: Build Rust
         run: |
           cd src/wasm-crypto
           cargo build --verbose          
           wasm-pack build
-          
+
       - name: Commit Rust build and Push Changes
         run: |
           git config --local user.email "pritam.prasd@gmail.com"
