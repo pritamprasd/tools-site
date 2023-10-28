@@ -1,7 +1,7 @@
 {
     "name": "Everyday DEV Tools",
     "short_name": "Tools",
-    "description": "Tools used in everyday DEV work.",
+    "description": "Tools used in everyday DEV work...",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#302e2e",
