@@ -18,15 +18,12 @@ jobs:
       - name: Setup wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
-      - name: Build Rust
+      - name: Commit Rust build and Push Changes
         run: |
           cd src/wasm-crypto
           cargo build --verbose          
           wasm-pack build
-
-      - name: Commit Rust build and Push Changes
-        run: |
-          git config --local user.email "pritam.prasd@gmail.com"
+          git config --local user.email "mail@pritam.dev"
           git config --local user.name "update-rust-build-files-script"
           git add .
           git diff --quiet || git commit -m "Automated update for rust bulid files"
