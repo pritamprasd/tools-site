@@ -59,6 +59,9 @@ module.exports = {
                 {
                     from: 'public/images', // Source directory where your PNG files are located
                     to: 'images',       // Destination directory in 'dist'
+                },
+                {
+                    from: 'src/wasm-crypto/pkg/wasm_crypto_bg.wasm'               
                 }
             ]
         }),
