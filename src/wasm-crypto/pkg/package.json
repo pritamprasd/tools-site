@@ -1,0 +1,17 @@
+{
+  "name": "wasm-crypto",
+  "collaborators": [
+    "Pritam <mail@pritam.dev>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "wasm_crypto_bg.wasm",
+    "wasm_crypto.js",
+    "wasm_crypto.d.ts"
+  ],
+  "module": "wasm_crypto.js",
+  "types": "wasm_crypto.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
